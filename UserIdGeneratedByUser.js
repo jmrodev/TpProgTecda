@@ -31,8 +31,8 @@ function print(data){
 }
 
 function userIdGeneratedByUser() {
-  //let char = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
-   let char = "0987654321"
+  let char = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+  // let char = "0987654321"
   let length = char.length;
   let countChar = prompt('Ingresa la cantidad de caracteres : ');
   let countId = prompt('Ingresa la cantidad de Ids : ')
