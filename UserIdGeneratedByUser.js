@@ -1,7 +1,6 @@
 import promptSync from 'prompt-sync'
 const prompt = promptSync();
 
-
 function randomNumber(length) {
   return Math.floor(Math.random() * length);
 }
@@ -29,46 +28,58 @@ function generateString(countChar, char, length) {
 function print(data) {
   return console.log(data + '\n');
 }
+function selectCharacterSet() {
+  const generalChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+  const numberChar = "0987654321";
+  const letterChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  const upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const lowerChar = "abcdefghijklmnopqrstuvwxyz";
+  const signChar = "\|@#~½¬{[]}\][{} ̣·•ª!·$%&/()=?¿*^Ç¨_:;><,.-ḉ+`¡'º";
 
-function userIdGeneratedByUser() {
-  let generalChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
-  let numberChar = "0987654321"
-  let letterChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-  let upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  let lowerChar = "abcdefghijklmnopqrstuvwxyz"
-  let signChar = "\|@#~½¬{[]}\][{} ̣·•ª!·$%&/()=?¿*^Ç¨_:;><,.-ḉ+`¡'º"
+  const selectChar = prompt('Ingresa el tipo de caracteres que deseas usar : \n 1 - Números \n 2 - Letras \n 3 - Mayúsculas \n 4 - Minúsculas \n 5 - Signos \n 6 - General \n : ');
 
-  let selectChar = prompt('Ingresa el tipo de caracteres que deseas usar : \n 1 - Números \n 2 - Letras \n 3 - Mayúsculas \n 4 - Minúsculas \n 5 - Signos \n 6 - General \n : ');
-
-  let char = "";
-
+  let charSet = "";
   switch (selectChar) {
     case '1':
-      char = numberChar;
+      charSet = numberChar;
       break;
     case '2':
-      char = letterChar;
+      charSet = letterChar;
       break;
     case '3':
-      char = upperChar;
+      charSet = upperChar;
       break;
     case '4':
-      char = lowerChar;
+      charSet = lowerChar;
       break;
     case '5':
-      char = signChar;
+      charSet = signChar;
       break;
     case '6':
-      char = generalChar;
+      charSet = generalChar;
       break;
     default:
-      char = generalChar;
+      charSet = generalChar;
       break;
   }
+
+  return charSet;
+}
+
+function userIdGeneratedByUser() {
+
+  let char = selectCharacterSet();
   let length = char.length;
+  let countId;
+  let countChar;
+
+  countChar = prompt('Ingresa la cantidad de caracteres : ');
+
+  (typeof(countChar) !== 'number')? console.log("La cantidad ingresada es " + countChar): console.log("La cantidad de caracteres debe ser un numero entero");
   
-  let countChar = prompt('Ingresa la cantidad de caracteres : ');
-  let countId = prompt('Ingresa la cantidad de Ids : ')
+  countId = prompt('Ingresa la cantidad de Ids : ');
+  
+  (typeof(countId) !== 'number')? console.log("La cantidad ingresada es " + countId): console.log("La cantidad de Ids debe ser un numero entero");
 
   print(generateId(countId, countChar, char, length));
 }
