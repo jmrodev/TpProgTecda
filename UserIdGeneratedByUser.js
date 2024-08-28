@@ -12,7 +12,7 @@ function generateCaracter(char, length) {
 function generateId(countId, countChar, char, length) {
   let id = "";
   for (let i = 0; i < countId; i++) {
-    id += ' HASH : ' + generateString(countChar, char, length) + '----- \n \n \n';
+    id += ' HASH : ' + generateString(countChar, char, length) + '  \n ';
   }
   return id;
 }
