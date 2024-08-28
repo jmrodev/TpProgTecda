@@ -1,7 +1,7 @@
 let atletas = [
     {
         "nombre": "Isabella",
-        "tiempo": 54
+        "tiempo": 30
     },
     {
         "nombre": "Valentina",
@@ -9,7 +9,7 @@ let atletas = [
     },
     {
         "nombre": "Sofía",
-        "tiempo": 52
+        "tiempo": 60
     },
     {
         "nombre": "Camila",
@@ -21,11 +21,11 @@ let atletas = [
     },
     {
         "nombre": "Emilia",
-        "tiempo": 55
+        "tiempo": 11
     },
     {
         "nombre": "Gabriela",
-        "tiempo": 51
+        "tiempo": 22
     },
     {
         "nombre": "Lucía",
@@ -37,23 +37,40 @@ let atletas = [
     },
     {
         "nombre": "María",
-        "tiempo": 46
+        "tiempo": 10
     }
 ];
 
 
+
+
+
+
+function getPerson(person) {
+   let winers = []
+    for (let index = 0; index < atletas.length; index++) {
+        if (person.tiempo === atletas[index].tiempo) {
+            winers.push(atletas[index])
+            return winers
+        }
+    }
+}
+
+function getMinorTime(array, prop) {
+    let minor = array[0]
+    for (let index = 1; index < array.length; index++) {
+        if (minor.tiempo > array[index].tiempo) {
+            minor = array[index]
+            return minor
+        }
+    }
+}
+
 function getWinner() {
-    let winner = atletas[0]
-    let second = atletas[0]
-    atletas.forEach(atleta => {
-        if (atleta.tiempo > winner.tiempo) {
-             let primero = winner
-             console.log(winner);
-             if (primero > second.tiempo) {
-                console.log(second);
-             }
-         }
-        })
+    let minorTime = getMinorTime(atletas, 'tiempo')
+   let win =  getPerson(minorTime)
+   console.log(win);
+   
 }
 
 getWinner()
