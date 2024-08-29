@@ -84,4 +84,4 @@ function userIdGeneratedByUser() {
   print(generateId(countId, countChar, char, length));
 }
 
-userIdGeneratedByUser();
+userIdGeneratedByUser();    
