@@ -32,7 +32,9 @@ let array = [
     
     for (let index = 0; index < array.length; index++) {
       const item = array[index];
-            let alreadyCounted = false;
+      
+      // Si el elemento no ha sido contado, lo contamos y lo añadimos a `checked`
+      let alreadyCounted = false;
       for (let j = 0; j < checked.length; j++) {
         if (checked[j] === item) {
           alreadyCounted = true;
@@ -42,8 +44,7 @@ let array = [
   
       if (!alreadyCounted) {
         MainArray[MainArray.length] = findIquals(array, item);
-        checkhtop
-        ed[checked.length] = item; 
+        checked[checked.length] = item; // Añadimos el elemento a `checked`
       }
     }
     
