@@ -2,15 +2,16 @@
   "name": "tp",
   "version": "1.0.0",
   "type": "module",
-  "main": "UserIdGeneratedByUser.js",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node  UserIdGeneratedByUser.js"
+    "start": ""
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "fs": "^0.0.1-security",
     "prompt-sync": "^4.2.0"
   }
 }
